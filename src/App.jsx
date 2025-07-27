@@ -92,7 +92,7 @@ const BrowserAddressBar = styled.div`
 `
 
 const Section = styled(motion.div)`
-  min-height: ${props => props.isFooter ? 'auto' : '100vh'};
+  min-height: ${props => props.isFooter ? 'auto' : 'auto'};
   width: 100%;
 `
 

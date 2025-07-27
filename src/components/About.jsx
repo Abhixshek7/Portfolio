@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
 
 const AboutSection = styled.section`
-  min-height: 100vh;
+  min-height: 86vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

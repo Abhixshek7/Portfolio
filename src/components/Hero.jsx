@@ -4,16 +4,22 @@ import styled from 'styled-components'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 const HeroSection = styled.section`
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 2rem;
   background-color: ${props => props.theme.background};
   color: ${props => props.theme.text};
   position: relative;
   overflow: hidden;
+
+  @media (min-width: 1024px) {
+    padding-left: 10rem;
+    min-height: 86vh;
+
+  }
 `
 
 const HeroContent = styled.div`
@@ -29,6 +35,11 @@ const HeroContent = styled.div`
     flex-direction: column-reverse;
     gap: 2rem;
   }
+
+  @media (min-width: 1024px) {
+    max-width: 1000px;
+    gap: 3rem;
+  }
 `
 
 const TextContent = styled.div`
@@ -38,8 +49,8 @@ const TextContent = styled.div`
 `
 
 const ProfileImage = styled(motion.img)`
-  width: 350px;
-  height: 350px;
+  width: 400px;
+  height: 400px;
   margin-right: 50px;
   border-radius: 20%;
   object-fit: cover ;
@@ -52,6 +63,12 @@ const ProfileImage = styled(motion.img)`
     margin-right: 0;
     margin: 0 auto;
   }
+
+  @media (min-width: 1024px) {
+    width: 280px;
+    height: 280px;
+    margin-right: 0;
+  }
 `
 
 const Name = styled(motion.h1)`
@@ -63,6 +80,10 @@ const Name = styled(motion.h1)`
   @media (max-width: 768px) {
     font-size: 3rem;
     text-align: center;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 3.5rem;
   }
 `
 

@@ -17,6 +17,17 @@ const NavWrapper = styled.div`
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   width: calc(100% - 2rem);
   max-width: 1100px;
+
+  @media (min-width: 1024px) {
+    bottom: 50%;
+    left: 2rem;
+    transform: translateY(50%);
+    width: auto;
+    max-width: none;
+    border-radius: 20px;
+    height: auto;
+    min-height: 400px;
+  }
 `
 
 const Nav = styled.nav`
@@ -25,6 +36,16 @@ const Nav = styled.nav`
   justify-content: space-around;
   align-items: center;
   width: 100%;
+
+  @media (min-width: 1024px) {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    width: auto;
+    height: 100%;
+  }
 `
 
 const NavItem = styled.div`
@@ -41,6 +62,12 @@ const NavItem = styled.div`
   
   &:hover {
     background-color: ${props => props.theme.secondary}10;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 1rem;
+    gap: 0.75rem;
+    width: 100%;
   }
 `
 
@@ -76,6 +103,14 @@ const ThemeDropdown = styled.div`
   visibility: ${props => props.isOpen ? 'visible' : 'hidden'};
   transition: all 0.3s ease;
   z-index: 1001;
+
+  @media (min-width: 1024px) {
+    bottom: 50%;
+    left: 100%;
+    transform: translateY(50%);
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+  }
 `
 
 const ThemeOption = styled.div`

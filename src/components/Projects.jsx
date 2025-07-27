@@ -13,6 +13,7 @@ const ProjectsSection = styled.section`
 const ProjectsContainer = styled(motion.div)`
   max-width: 1200px;
   margin: 0 auto;
+  height: 86vh;
 `
 
 const Title = styled(motion.h2)`

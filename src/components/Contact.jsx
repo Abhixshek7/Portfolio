@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer'
 import { FaLinkedin, FaEnvelope, FaPhone, FaGithub } from 'react-icons/fa'
 
 const ContactSection = styled.section`
-  min-height: 100vh;
+  min-height: 86vh;
   padding: 2rem 2rem; // Reduced from 4rem to 2rem
   background-color: ${props => props.theme.background};
   color: ${props => props.theme.secondary};
@@ -97,7 +97,9 @@ const Contact = () => {
           </ContactLink>
 
           <ContactLink
-            href="mailto:abhixshek20@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Abhishek,%0A%0AI%20saw%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%0A%0ABest%20regards,"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=abhixshek20@gmail.com&su=Portfolio%20Inquiry&body=Hi%20Abhishek,%0A%0AI%20saw%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%0A%0ABest%20regards,"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -108,7 +110,7 @@ const Contact = () => {
           </ContactLink>
 
           <ContactLink
-            href="https://github.com/your-github-username" // Add your GitHub profile URL here
+            href="https://github.com/Abhixshek7" // Add your GitHub profile URL here
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}
