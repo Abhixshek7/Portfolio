@@ -49,24 +49,31 @@ const TextContent = styled.div`
 `
 
 const ProfileImage = styled(motion.img)`
-  width: 400px;
-  height: 400px;
+  width: 900px;
+  height: 900px;
   margin-right: 50px;
-  border-radius: 20%;
-  object-fit: cover ;
-  border: 4px solid ${props => props.theme.secondary};
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10%;
+  object-fit: cover;
+  border: 3px solid #e5d8c0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  }
 
   @media (max-width: 768px) {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     margin-right: 0;
     margin: 0 auto;
   }
 
   @media (min-width: 1024px) {
-    width: 280px;
-    height: 280px;
+    width: 350px;
+    height: 350px;
     margin-right: 0;
   }
 `
@@ -143,21 +150,7 @@ const SocialLink = styled(motion.a)`
   }
 `
 
-const FloatingElements = styled(motion.div)`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-`
 
-const FloatingElement = styled(motion.div)`
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: ${props => props.theme.secondary};
-  border-radius: 50%;
-  opacity: 0.2;
-`
 
 const Hero = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
@@ -196,32 +189,8 @@ const Hero = () => {
     return () => clearTimeout(timeout)
   }, [currentCharIndex, isDeleting, currentText, currentTextIndex, texts.length])
 
-  const floatingElements = Array.from({ length: 10 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    scale: Math.random() * 0.5 + 0.5,
-  }))
-
   return (
     <HeroSection id="hero">
-      <FloatingElements>
-        {floatingElements.map((element) => (
-          <FloatingElement
-            key={element.id}
-            initial={{ x: `${element.x}%`, y: `${element.y}%` }}
-            animate={{
-              y: [`${element.y}%`, `${element.y + 10}%`, `${element.y}%`],
-              scale: [element.scale, element.scale + 0.2, element.scale],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </FloatingElements>
       
       <HeroContent>
         <TextContent>
